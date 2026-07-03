@@ -1,9 +1,11 @@
-# -Purple-Team-Lab-Scenario-2-Initial-Access-Execution-Persistence-Detection\
-🛡️ Purple Team Lab – Scenario #2: Initial Access → Execution → Persistence → Detection
+# 🛡️ Purple Team Lab Scenario 2 Initial Access Execution Persistence Detection
+
 📌 Project Overview
+
 This project demonstrates a multi-stage purple team attack simulation performed in a home lab using Kali Linux, Windows Server, and Wazuh SIEM. The objective was to emulate common adversary techniques and validate that security monitoring tools successfully detected each phase of the attack.
 
 🎯 Objectives
+
 🔍 Perform reconnaissance against a Windows target
 🔑 Simulate an initial access attempt using Remote Desktop Protocol (RDP)
 ⚙️ Execute commands on the Windows system
@@ -12,6 +14,7 @@ This project demonstrates a multi-stage purple team attack simulation performed 
 📊 Investigate alerts generated in Wazuh
 
 🖥️ Lab Environment
+
 Component
 Technology
 Attacker Machine
@@ -27,6 +30,7 @@ MITRE ATT&CK
 
 
 ⚔️ Attack Chain
+
 🔍 Phase 1 – Reconnaissance
 Objective
 Discover open ports and running services on the Windows server.
@@ -34,6 +38,7 @@ Command
 nmap -sS -sV 192.168.1.15
 
 Result
+
 Identified open network ports
 Enumerated running services
 Simulated attacker reconnaissance
@@ -48,12 +53,14 @@ Possible scan detection rules
 
 
 🔑 Phase 2 – Initial Access
+
 Objective
 Simulate a failed Remote Desktop login.
 Command
 xfreerdp /v:192.168.1.15 /u:FakeAdmin
 
 Result
+
 Failed authentication attempt
 Generated Windows Security Event ID 4625
 Detection
@@ -120,6 +127,7 @@ Detection
 
 
 ⚙️ Phase 3 – Execution
+
 Objective
 Execute commands on the Windows server.
 Commands
@@ -128,6 +136,7 @@ ipconfig
 Get-Process
 
 Result
+
 Generated Windows process activity
 Created PowerShell logs (if enabled)
 Detection
@@ -175,12 +184,14 @@ Sysmon Event ID 1 (if configured)
 
 
 📌 Phase 4 – Persistence
+
 Objective
 Simulate persistence using a Registry Run Key.
 Command
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v TestApp /t REG_SZ /d notepad.exe
 
 Result
+
 Created a registry startup entry that launches Notepad when the user logs in.
 Detection
 Registry modification
@@ -203,12 +214,14 @@ Wazuh monitoring
 
 
 📁 Phase 5 – File Integrity Monitoring (FIM)
+
 Objective
 Trigger File Integrity Monitoring by creating a new file.
 Command
 echo "attack simulation" > C:\PurpleTeamLab\testfile.txt
 
 Result
+
 Created a monitored file
 Triggered Wazuh FIM
 Detection
@@ -281,6 +294,7 @@ Detection
 
 
 📊 Investigation Timeline
+
 Time
 Activity
 Detection
@@ -302,6 +316,7 @@ FIM Alert
 
 
 🎯 MITRE ATT&CK Mapping
+
 Technique
 ATT&CK ID
 Active Scanning
@@ -319,6 +334,7 @@ T1547.001
 
 
 🛡️ Wazuh Detection Summary
+
 ✅ Reconnaissance Activity
 ✅ Failed Authentication Attempts
 ✅ Windows Security Event Logs
@@ -327,6 +343,7 @@ T1547.001
 ✅ File Integrity Monitoring
 
 📚 Skills Demonstrated
+
 🛡️ Security Monitoring
 🔎 Threat Hunting
 📊 SIEM Analysis
@@ -339,9 +356,11 @@ T1547.001
 🔍 Incident Investigation
 
 🚀 Lessons Learned
+
 This lab demonstrated how a SIEM can correlate activity across multiple stages of an attack. By simulating reconnaissance, initial access, execution, persistence, and file changes, I validated detection capabilities within Wazuh and strengthened my understanding of attacker behavior, Windows event logging, and security monitoring.
 
 📸 Screenshots
+
 📷 Nmap Scan
 📷 Failed RDP Login
 📷 Windows Event ID 4625
@@ -352,6 +371,8 @@ This lab demonstrated how a SIEM can correlate activity across multiple stages o
 
 
 👩‍💻 Author
-MIchael Stromer
+
+Michael Stromer
+
 Aspiring SOC Analyst | Blue Team | Detection Engineering | Threat Hunting
 
