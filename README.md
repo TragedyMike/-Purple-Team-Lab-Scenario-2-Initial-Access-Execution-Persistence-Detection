@@ -1,4 +1,4 @@
-# 🛡️ Purple Team Lab Scenario 2 Initial Access Execution Persistence Detection
+# 🛡️ Purple Team Lab Scenario 2: Initial Access Execution Persistence Detection
 
 📌 Project Overview
 
